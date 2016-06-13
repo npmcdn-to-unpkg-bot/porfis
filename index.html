@@ -5,12 +5,14 @@
   <head>
     <base href="/">
     <!-- #enddocregion base-href -->
-    <title>Angular 2 Tour of Heroes</title>
+    <title>Parking On Rent - FIS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- #enddocregion head -->
     <!-- #docregion css -->
     <link rel="stylesheet" href="styles.css">
+	
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <!-- #enddocregion css -->
     <!-- #docregion head -->
     <!-- IE required polyfills, in this exact order -->
@@ -22,13 +24,14 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script src="node_modules/leaflet/dist/leaflet.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>  
     <!-- #docregion router -->
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <!-- #enddocregion router -->
+    <script src="systemjs.config.js"></script>
     <script>
-      System.config({packages: {app: {format: 'register', defaultExtension: 'js'}}});
-      System.import('app/main')
-            .then(null, console.error.bind(console));
+      System.import('app').catch(function(err){ console.error(err); });
     </script>
   </head>
   <!-- #enddocregion head -->

@@ -3,3 +3,33 @@ body { margin: 2em; }
 body, input[text], button { color: #888; font-family: Cambria, Georgia; }
 button { padding: 0.2em; font-size: 14px}
 * { font-family: Arial; }
+
+#mapid {  width: auto;
+  height: 500px; }
+
+.parking{
+	float: left;
+  	border: solid red 1px;
+    width: 150px;
+    height: 250px;
+    text-align: center;
+	line-height: 250px;
+}
+
+.reserved {
+	background-color: yellow;
+}
+
+.busy {
+	background-color: red;
+}
+
+.available {
+	background-color: green;
+}
+
+.parking-title {
+    font-family: cursive;
+    font-size: xx-large;
+    color: white;	
+}

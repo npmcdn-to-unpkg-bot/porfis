@@ -6,16 +6,11 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
+import { SelectParkingComponent } from './select-parking.component';
+
 @Component({
   selector: 'my-app',
-  template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a [routerLink]="['Dashboard']">Reserve</a>
-      <a [routerLink]="['Heroes']">Developers</a>
-    </nav>
-    <router-outlet></router-outlet>
-  `,
+   templateUrl: 'app/landingPage.html',
   styleUrls: ['app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [
@@ -23,6 +18,7 @@ import { HeroService } from './hero.service';
     HeroService
   ]
 })
+
 @RouteConfig([
   {
     path: '/dashboard',
@@ -39,6 +35,11 @@ import { HeroService } from './hero.service';
     path: '/heroes',
     name: 'Heroes',
     component: HeroesComponent
+  },
+  {
+    path: '/selectParking',
+    name: 'SelectParking',
+    component: SelectParkingComponent
   }
 ])
 export class AppComponent {
