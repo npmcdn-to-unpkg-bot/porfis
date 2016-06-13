@@ -1,0 +1,15 @@
+<h2>Show Select Parking here!!</h2>
+<div>
+	<div *ngFor="#p of selectedSpace.parkings">
+	  <div (click)="onSelect(p)" class="parking" [ngClass]="p.status" [class.available]="!p.status">
+		 <span class="parking-title">{{p.name}}</span>
+	  </div>
+	</div>
+	
+	<div style="width: 400px;clear:left; margin-top:30px; border: solid 1px black">
+		Show price here!
+	</div>
+	<div style="clear:left; margin-top:30px">
+		<button (click)="openNavigationApp(selectedSpace)">Open Navigation!</button>
+	</div>
+</div>
