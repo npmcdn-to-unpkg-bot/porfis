@@ -1,7 +1,7 @@
-import { Hero } from './hero';
+import { Location } from './location';
 
 
-export var HEROES: any[] = [{
+export var LOCATIONS: any[] = [{
 		"id" : 1,
 		"name" : "J.M. Road",
 		"center" : {"lat":18.516557630068778, "lng":73.84272658895497},

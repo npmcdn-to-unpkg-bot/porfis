@@ -2,8 +2,8 @@ import { Component, Input, OnInit} from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import {Router} from 'angular2/router';
  
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Location } from './location';
+import { LocationService } from './location.service';
 
 
 @Component({
@@ -14,23 +14,23 @@ import { HeroService } from './hero.service';
 
 export class SelectParkingComponent implements OnInit {
   selectedSpace: any;
-  heroes: any;
+  locations: any;
   selected: any;
   
   constructor(private router: Router,
-    private _heroService: HeroService,
+    private _locationService: LocationService,
     private _routeParams: RouteParams) {
 	
 	console.log("_routeParams" + _routeParams);
 	this.selectedSpace = _routeParams.params['space'];
   }
 
-  getHeroes() {
-    this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+  getLocations() {
+    this._locationService.getLocations().then(locations => this.locations = locations);
   }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getLocations();
   }
 
   onSelect(p: any) { 

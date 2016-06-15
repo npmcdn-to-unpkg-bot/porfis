@@ -2,9 +2,9 @@ import { Component } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
 import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { LocationsComponent } from './locations.component';
+import { LocationDetailComponent } from './location-detail.component';
+import { LocationService } from './location.service';
 
 import { SelectParkingComponent } from './select-parking.component';
 
@@ -15,7 +15,7 @@ import { SelectParkingComponent } from './select-parking.component';
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
-    HeroService
+    LocationService
   ]
 })
 
@@ -28,13 +28,13 @@ import { SelectParkingComponent } from './select-parking.component';
   },
   {
     path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
+    name: 'LocationDetail',
+    component: LocationDetailComponent
   },
   {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
+    path: '/locations',
+    name: 'Locations',
+    component: LocationsComponent
   },
   {
     path: '/selectParking',

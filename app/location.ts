@@ -1,4 +1,4 @@
-export class Hero {
+export class Location {
   id: number;
   name: string;
   center: {lat: Number, lng: Number};

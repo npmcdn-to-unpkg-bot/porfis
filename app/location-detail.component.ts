@@ -2,23 +2,23 @@ import { Component, Input, OnInit, NgZone } from 'angular2/core';
 import { RouteParams } from 'angular2/router';
 import {Router} from 'angular2/router';
  
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Location } from './location';
+import { LocationService } from './location.service';
 
 declare var google: any;
 
 @Component({
-  selector: 'my-hero-detail',
-  templateUrl: 'app/hero-detail.component.html',
-  styleUrls: ['app/hero-detail.component.css']
+  selector: 'my-location-detail',
+  templateUrl: 'app/location-detail.component.html',
+  styleUrls: ['app/location-detail.component.css']
 })
 
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+export class LocationDetailComponent implements OnInit {
+  @Input() location: Location;
   router: Router;
   
   constructor(private _router: Router,
-    private _heroService: HeroService,
+    private _locationService: LocationService,
     private _routeParams: RouteParams,
 	private zone: NgZone) {
 	this.router = _router;
@@ -26,12 +26,12 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit() {
     let id = +this._routeParams.get('id');
-    this._heroService.getHero(id)
-      .then(hero => {
+    this._locationService.getLocation(id)
+      .then(location => {
 	 
-		this.hero = hero
+		this.location = location
 
-		var pos = this.hero.center;
+		var pos = this.location.center;
 
 	  var myLatLng = new google.maps.LatLng(pos.lat, pos.lng);
 	  // General Options
@@ -45,8 +45,8 @@ export class HeroDetailComponent implements OnInit {
 	  // Polygon Coordinates
 	  var self = this;
 	   
-	  if(this.hero.spaces){
-	  	this.hero.spaces.forEach(function(space){
+	  if(this.location.spaces){
+	  	this.location.spaces.forEach(function(space){
 			if(space.cords != null){
 					var cords: any[] = [];
 					space.cords.forEach(function(cord){
